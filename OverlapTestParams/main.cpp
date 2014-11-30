@@ -4,6 +4,7 @@
 #define K 5
 #define M 1032
 #define m 9
+#define PRECISION 8
 
 void main()
 {
@@ -11,7 +12,7 @@ void main()
 
 	compute_probabilities(K, M, m, pi);
 
-	std::cout << std::setprecision(7);
+	std::cout << std::setprecision(PRECISION);
 	std::cout << pi[0] << std::endl;
 	std::cout << pi[1] << std::endl;
 	std::cout << pi[2] << std::endl;
