@@ -1,17 +1,18 @@
 #include "biglong.h"
 
+//stores all computed values for the reccurence formula
 class TValueMatrix
 {
 	blong::biglong** T_;
 	int K_;
 	int M_;
-
-public:
+	
 	TValueMatrix() = delete;
 	TValueMatrix(const TValueMatrix&) = delete;
 	TValueMatrix(const TValueMatrix&&) = delete;
 	TValueMatrix& operator=(const TValueMatrix&) = delete;
 	TValueMatrix& operator=(const TValueMatrix&&) = delete;
+public:
 
 	TValueMatrix(int K, int M) : K_(K), M_(M)
 	{
@@ -33,6 +34,13 @@ public:
 	}
 };
 
+//implements the reccurence formula for occurrence probabilities of the template
+//in The Overlapping Template Matching Test from NIST Statistical Test Suite
+//parameters
+//*IN* K: number of degrees of freedom
+//*IN* M: length in bits of a string to be tested
+//*IN* m: length in bits of the template
+//*OUT* pi: occurrence probabilities of the template
 inline void compute_probabilities(int K, int M, int m, double* pi)
 {
 	TValueMatrix T(K, M);
