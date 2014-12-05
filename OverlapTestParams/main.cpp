@@ -7,7 +7,7 @@
 #define K 5 //number of degrees of freedom
 #define M 1032 //length in bits of a string to be tested
 #define m 9 //length in bits of the template
-#define PRECISION 10 //decimal precision to be used to format floating-point values
+#define PRECISION 10 //decimal precision to format floating-point values
 
 void main()
 {
